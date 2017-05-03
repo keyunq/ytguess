@@ -6,7 +6,7 @@ App({
   checkSession:function(mysessionid) {
     return new Promise(function(resolve, reject) {
       wx.request({
-        url: 'https://api.keyunq.com/check.php',
+        url: 'https://xxx.xxxxx.com/check.php',
         header: {
           sessionid:mysessionid
         },
@@ -26,7 +26,7 @@ App({
         success: function (res0) {
           if (res0.code) {
             wx.request({
-              url: 'https://api.keyunq.com/login.php',
+              url: 'https://xxx.xxxxx.com/login.php',
               data: {
                 code: res0.code
               },
