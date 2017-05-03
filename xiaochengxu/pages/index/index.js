@@ -19,36 +19,6 @@ Page({
   },
   onLoad: function () {
     console.log("Page onLoad函数");
-    /*
-    wx.downloadFile({
-      url: 'https://api.keyunq.com/8585.mp3', //仅为示例，并非真实的资源
-      success: function(res) {
-        console.log("下载音效成功"+res.tempFilePath);
-        wx.playBackgroundAudio({
-          dataUrl: res.tempFilePath,
-          title: '古琴音效',
-          coverImgUrl: 'http://avatar.csdn.net/4/D/B/1_qq_31383345.jpg',
-          success: function() {
-            console.log("播放音效")
-          }
-        })
-      }
-    })
-    var tempFilePath = "https://api.keyunq.com/8585.mp3"
-    wx.playVoice({
-      filePath: tempFilePath,
-      complete: function(){
-        console.log("播放音效")
-      }
-    })*/
-    wx.playBackgroundAudio({
-      dataUrl: 'https://api.keyunq.com/8585.mp3',
-      title: '古琴音效',
-      coverImgUrl: 'https://api.keyunq.com/logo.png',
-      success: function() {
-        console.log("播放音效")
-      }
-    })
   },
   onHide: function() {
     console.log('发送注销消息')
@@ -79,7 +49,7 @@ Page({
 
     //websocket
     wx.connectSocket({
-      url: 'wss://ws.keyunq.com/echo'
+      url: 'wss://ws.xxxxx.com/echo'
     })
     wx.onSocketOpen(function(res) {
       console.log('WebSocket连接已打开！')
