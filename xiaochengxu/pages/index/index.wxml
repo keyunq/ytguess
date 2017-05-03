@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="page">
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex" bindtap="getAudioStatus">
+            <view class="weui-flex__item text_center" wx:for="{{onlineList}}" wx:key="key"><image class="userinfo-avatar" src="{{item.AvatarUrl}}" background-size="cover"></image><view class="weui-grid__label">{{item.User}}</view></view>       
+        </view>
+    </view>
+
+    <view class="page__bd page__bd_spacing margin-10">
+        <view class="weui-flex">
+            <view class="weui-flex__item text_center"><view class="weui-grid__label">状态：{{statusStr}}</view></view>
+            <block wx:for="{{buttonList}}" wx:key="key">
+            <view class="weui-flex__item text_center {{buttonStyleList[index]}}"><button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="{{buttonFuncList[index]}}">{{buttonStrList[index]}}</button></view>
+            </block>    
+        </view>
+    </view>
+
+    <view class="{{guessBoxStatus}}">
+        <view class="status">请选择出拳：</view>
+        <view class="page__bd page__bd_spacing">
+            <view class="weui-flex">
+                <view class="weui-flex__item text_center" wx:for="{{handList}}" wx:key="key"><button class="weui-btn mini-btn" type="{{handStyleList[item]}}" data-handNum='{{item}}' size="mini" bindtap="setHandNum">{{item}}</button></view>      
+            </view>
+        </view>
+        <view class="status">请选择总数：</view>
+        <view class="page__bd page__bd_spacing">
+            <view class="weui-flex" wx:for="{{guessList}}" wx:key="key">
+                <view><button class="weui-btn mini-btn" type="{{guessStyleList[item]}}" data-guessNum='{{item}}' size="mini" bindtap="setGuessNum">{{item}}</button></view>
+            </view>
+        </view>
+    </view>
+</view>
